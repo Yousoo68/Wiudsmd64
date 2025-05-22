@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title> </title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+      color: #333;
+    }
+
+    .toggle-button {
+      font-weight: bold;
+      font-size: 1.3em;
+      color: white;
+      background-color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #555;
+      transform: translateY(-2px);
+    }
+
+    .toggle-wrapper {
+      overflow: hidden;
+      transition: max-height 0.6s ease, padding 0.3s ease;
+      max-height: 0;
+      padding: 0 10px;
+    }
+
+    .toggle-wrapper.open {
+      max-height: 500px; /* Adjust for content size */
+      padding: 20px 10px;
+    }
+
+    .toggle-content {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-height: 300px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .toggle-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .toggle-content::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-button" onclick="toggleContent()">prologue</button>
+
+  <div class="toggle-wrapper" id="toggleWrapper">
+    <div class="toggle-content">ddddd<br><br>"당신이 기억하지 못하는 순간들을 나는 기억합니다. 다시 만나야 할 때입니다."<br><br>
+      연희는 주위를 둘러보았다. 거리엔 아무도 없었고, 우산 위로 빗방울 소리만이 리듬을 탔다. 엽서를 다시 들여다보자, 종이 끝에 희미하게 보이는 무언가가 있었다. 빗물에 스며든 듯한 오래된 지도 조각이었다.<br><br>그 순간, 그녀의 머릿속 어딘가에서 오래전 꿈속 장면이 떠올랐다. 바닷가, 갈매기, 그리고 그 사람의 목소리.
+    </div>
+  </div>
+
+  <script>
+    function toggleContent() {
+      const wrapper = document.getElementById('toggleWrapper');
+      wrapper.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
