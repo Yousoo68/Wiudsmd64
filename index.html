@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days Toggle</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      height: 100vh;
+      overflow: hidden;
+    }
 
+    .container {
+      padding: 20px;
+      box-sizing: border-box;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .top-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .toggle-button {
+      font-weight: bold;
+      font-size: 1em;
+      color: white;
+      background-color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .toggle-button:hover {
+      background-color: #555;
+      transform: translateY(-2px);
+    }
+
+    .toggle-wrapper {
+      overflow: hidden;
+      transition: max-height 0.6s ease, padding 0.3s ease;
+      max-height: 0;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    .toggle-wrapper.open {
+      max-height: 500px;
+      padding: 20px 10px;
+    }
+
+    .toggle-content {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-height: 300px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .toggle-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .toggle-content::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img class="top-image" src="https://cf.asiaartistawards.com/news/21/2024/09/2024090213423898612_1.jpg" alt="Prologue Image">
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper0')">Prologue</button>
+  <div class="toggle-wrapper" id="toggleWrapper0">
+    <div class="toggle-content">Prologue 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper1')">Day1</button>
+  <div class="toggle-wrapper" id="toggleWrapper1">
+    <div class="toggle-content">Day1 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper2')">Day2</button>
+  <div class="toggle-wrapper" id="toggleWrapper2">
+    <div class="toggle-content">Day2 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper3')">Day3</button>
+  <div class="toggle-wrapper" id="toggleWrapper3">
+    <div class="toggle-content">Day3 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper4')">Day4</button>
+  <div class="toggle-wrapper" id="toggleWrapper4">
+    <div class="toggle-content">Day4 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper5')">Day5</button>
+  <div class="toggle-wrapper" id="toggleWrapper5">
+    <div class="toggle-content">Day5 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper6')">Day6</button>
+  <div class="toggle-wrapper" id="toggleWrapper6">
+    <div class="toggle-content">Day6 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper7')">Day7</button>
+  <div class="toggle-wrapper" id="toggleWrapper7">
+    <div class="toggle-content">Day7 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper8')">Day8</button>
+  <div class="toggle-wrapper" id="toggleWrapper8">
+    <div class="toggle-content">Day8 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper9')">Day9</button>
+  <div class="toggle-wrapper" id="toggleWrapper9">
+    <div class="toggle-content">Day9 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper10')">Day10</button>
+  <div class="toggle-wrapper" id="toggleWrapper10">
+    <div class="toggle-content">Day10 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper11')">Day11</button>
+  <div class="toggle-wrapper" id="toggleWrapper11">
+    <div class="toggle-content">Day11 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper12')">Day12</button>
+  <div class="toggle-wrapper" id="toggleWrapper12">
+    <div class="toggle-content">Day12 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper13')">Day13</button>
+  <div class="toggle-wrapper" id="toggleWrapper13">
+    <div class="toggle-content">Day13 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper14')">Day14</button>
+  <div class="toggle-wrapper" id="toggleWrapper14">
+    <div class="toggle-content">Day14 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper15')">Day15</button>
+  <div class="toggle-wrapper" id="toggleWrapper15">
+    <div class="toggle-content">Day15 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper16')">Day16</button>
+  <div class="toggle-wrapper" id="toggleWrapper16">
+    <div class="toggle-content">Day16 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper17')">Day17</button>
+  <div class="toggle-wrapper" id="toggleWrapper17">
+    <div class="toggle-content">Day17 내용</div>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent('toggleWrapper18')">Day18</button>
+  <div class="toggle-wrapper" id="toggleWrapper18">
+    <div class="toggle-content">Day18 내용</div>
+  </div>
+
+</div>
+
+<script>
+  function toggleContent(id) {
+    const wrapper = document.getElementById(id);
+    wrapper.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
